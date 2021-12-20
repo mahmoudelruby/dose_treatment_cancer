@@ -1,6 +1,7 @@
 import 'package:dose_treatment_cancer/models/cancer_model.dart';
 import 'package:dose_treatment_cancer/shared/components/vertical_text.dart';
 import 'package:dose_treatment_cancer/shared/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CancerTypesPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class CancerTypesPage extends StatelessWidget {
             'Bone cancer can begin in any bone in the body, but it most commonly affects the pelvis or the long bones in the arms and legs. Bone cancer is rare, making up less than 1 percent of all cancers. In fact, noncancerous bone tumors are much more common than cancerous ones.'),
     CancerModel(
       image: 'assets/images/endocrine_cancer.jpg',
-      name: 'Endocrine_caner',
+      name: 'Endocrine cancer',
       details:
           'Endocrine cancers are those found in tissues of the endocrine system, which includes the thyroid, adrenal, pancreas, parathyroid, and pituitary glands.',
     ),
@@ -33,61 +34,79 @@ class CancerTypesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                mainColor,
-                secondColorLight,
-              ],
-            ),
+      backgroundColor: secondColorLight,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              mainColor,
+              secondColorLight,
+            ],
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              //const VerticalText(text: 'Cancer Types'),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              SizedBox(
+                height: 250.0,
+                child: Row(
+                  children: const [
+                    VerticalText(text: 'Cancer Types'),
+                    SizedBox(width: 10.0,),
+                    Expanded(
+                      child: Text(
+                        'Kindly, please choose cancer type.',
+                        style: TextStyle(
+                            color: Colors.white, fontSize: 25.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
                 children: [
-
-                  GridView.count(
-                    crossAxisCount: 2,
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    mainAxisSpacing: 1.0,
-                    crossAxisSpacing: 1.0,
-                    childAspectRatio: 1 / 1.58,
-                    children:[
-                      buildGridItem(cancer[0], context),
-                    ],
-                  ),
+                  buildGridItem(cancer[0],(){}, context,),
+                  const Spacer(),
+                  buildGridItem(cancer[1],(){}, context),
+                ],
+              ),
+             const SizedBox(height: 8.0,),
+              Row(
+                children: [
+                  buildGridItem(cancer[2],(){}, context),
+                  const Spacer(),
+                  buildGridItem(cancer[3],(){},context),
                 ],
               ),
             ],
           ),
-        ),
+        )
       ),
     );
   }
 
-  Widget buildGridItem(CancerModel model, context) => Column(
+  Widget buildGridItem(CancerModel model,VoidCallback imagePressed, context) => Column(
         children: [
           InkWell(
             onTap: () {
-              print('$model');
+              print(model.name);
             },
-            child: Image(
-              width: 100.0,
-              height: 100.0,
-              fit: BoxFit.cover,
-              image: AssetImage(
-                model.image,
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Image(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  model.image,
+                ),
               ),
             ),
           ),

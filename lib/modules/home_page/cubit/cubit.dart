@@ -13,7 +13,7 @@ class HomeCubit extends Cubit<HomeStates> {
   static HomeCubit get(context) => BlocProvider.of(context);
 
   void calculateArea(double height, double weight, context) {
-    if (height > 220 || weight > 200) {
+    if (height > 250 ||height <100 || weight > 250) {
       showAlertDialog(context, title: 'Input  Error',
           content: 'Irrational inputs',
           defaultActionText: 'Ok',
