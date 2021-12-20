@@ -13,7 +13,7 @@ class VerticalText extends StatelessWidget {
             text,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 38,
+              fontSize: 30,
               fontWeight: FontWeight.w900,
             ),
           )),
