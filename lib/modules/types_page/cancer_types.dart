@@ -83,6 +83,7 @@ class CancerTypesPage extends StatelessWidget {
                   buildGridItem(cancer[3],(){},context),
                 ],
               ),
+              SizedBox(height: 185,),
             ],
           ),
         )

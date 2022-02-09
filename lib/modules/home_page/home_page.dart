@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
       builder: (context, state) {
         var cubit = HomeCubit.get(context);
         return Scaffold(
+
           body: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -69,7 +70,7 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(
-                              height: 8.0,
+                              height: 8,
                             ),
                             Row(
                               children: [
