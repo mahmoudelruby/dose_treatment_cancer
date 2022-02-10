@@ -1,5 +1,4 @@
 import 'package:dose_treatment_cancer/models/cancer_model.dart';
-import 'package:dose_treatment_cancer/shared/components/vertical_text.dart';
 import 'package:dose_treatment_cancer/shared/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +34,20 @@ class CancerTypesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: secondColorLight,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text(
+          "Cancer Types",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -55,7 +68,6 @@ class CancerTypesPage extends StatelessWidget {
                 height: 250.0,
                 child: Row(
                   children: const [
-                    VerticalText(text: 'Cancer Types'),
                     SizedBox(width: 10.0,),
                     Expanded(
                       child: Text(
@@ -83,7 +95,7 @@ class CancerTypesPage extends StatelessWidget {
                   buildGridItem(cancer[3],(){},context),
                 ],
               ),
-              SizedBox(height: 185,),
+              const SizedBox(height: 185,),
             ],
           ),
         )
@@ -95,7 +107,7 @@ class CancerTypesPage extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              print(model.name);
+
             },
             child: Container(
               width: 100,
