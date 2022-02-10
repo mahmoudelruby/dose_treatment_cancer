@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 Color mainColor = const Color(0xFF7EF9FF) ;
-Color secondColor =  Color(0xCC008081);
+
+Color secondColor =  const Color(0xCC008081);
 
 double area = 0;
