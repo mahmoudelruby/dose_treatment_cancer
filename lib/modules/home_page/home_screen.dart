@@ -90,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                         height: 50.0,
                         decoration: BoxDecoration(
                           color: secondColor ,
-                          borderRadius: BorderRadius.all(
+                          borderRadius: const BorderRadius.all(
                             Radius.circular(30.0),
                           ),
                         ),
@@ -145,7 +145,7 @@ class HomeScreen extends StatelessWidget {
         defaultActionText: "Continue",
         defaultAction: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => CancerTypesPage()));
+              .push(MaterialPageRoute(builder: (context) => const CancerTypesPage()));
         },
         cancelActionText: 'Change Values',
       );
