@@ -5,6 +5,7 @@ import 'package:dose_treatment_cancer/shared/components/custom_text_form_field.d
 import 'package:dose_treatment_cancer/shared/components/show_alert_dialogue.dart';
 import 'package:dose_treatment_cancer/shared/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -16,29 +17,14 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text(
-          "WELCOME",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,
-            fontWeight: FontWeight.w900,
-          ),
-        ),
+        title: Text("WELCOME",
+            style: GoogleFonts.pacifico(fontSize: 25, color: Colors.black)),
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: secondColor,
         centerTitle: true,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              mainColor,
-              secondColorLight,
-            ],
-          ),
-        ),
+        color: mainColor,
         width: double.infinity,
         height: double.infinity,
         child: Column(
@@ -47,21 +33,12 @@ class HomeScreen extends StatelessWidget {
             SafeArea(
               child: Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      mainColor,
-                      secondColorLight,
-                    ],
-                  ),
-                ),
+                color: mainColor,
               ),
             ),
-            const Text(
-              'Body Area surface measurement',
-              style: TextStyle(color: Colors.white, fontSize: 25.0),
+             Text(
+              'Body Surface Area \nMeasurement',
+              style: GoogleFonts.quintessential(color: Colors.black,fontSize: 35,fontWeight: FontWeight.w700),
             ),
             Container(
               height: 80.0,
@@ -111,8 +88,8 @@ class HomeScreen extends StatelessWidget {
                       child: Container(
                         width: 90.0,
                         height: 50.0,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                        decoration: BoxDecoration(
+                          color: secondColor ,
                           borderRadius: BorderRadius.all(
                             Radius.circular(30.0),
                           ),
@@ -125,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 'Ok',
                                 style: TextStyle(
-                                  color: Colors.teal,
+                                  color: Colors.black,
                                 ),
                               ),
                               SizedBox(
@@ -133,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Icon(
                                 Icons.arrow_forward_sharp,
-                                color: Colors.teal,
+                                color: Colors.black,
                               ),
                             ],
                           ),
@@ -164,7 +141,7 @@ class HomeScreen extends StatelessWidget {
         context,
         title: 'Body Area',
         content:
-            'Your height is $height, and your weight is $weight ,so your body area is equal to \n $area ',
+            'your body area is equal to  $area ',
         defaultActionText: "Continue",
         defaultAction: () {
           Navigator.of(context)

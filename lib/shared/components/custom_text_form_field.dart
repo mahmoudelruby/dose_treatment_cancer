@@ -31,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
           Text(
             tegText,
             style: const TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 14.0,
               fontWeight: FontWeight.bold,
             ),
@@ -42,15 +42,15 @@ class CustomTextFormField extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.04,
             child: TextFormField(
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: Colors.grey[700],
                 fontWeight: FontWeight.bold,
               ),
 
               decoration: InputDecoration(
                 hintText: hintText,
                 hintStyle: TextStyle(
-                  color: Colors.grey[400],
+                  color: Colors.grey[700],
                 ),
                 suffixIcon: IconButton(
                   onPressed: suffixPressed,

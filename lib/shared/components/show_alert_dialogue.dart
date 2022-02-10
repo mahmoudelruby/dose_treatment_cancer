@@ -27,14 +27,14 @@ Future<void> showAlertDialog(
                     },
                     child: Text(
                       cancelActionText,
-                      style: TextStyle(color: mainColor),
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 TextButton(
                   onPressed: defaultAction,
                   child: Text(
                     defaultActionText,
-                    style: TextStyle(color: mainColor),
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
               ],
