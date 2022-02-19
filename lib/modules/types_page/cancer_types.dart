@@ -20,11 +20,16 @@ class CancerTypesPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
-          "Cancer Type",
-          style: GoogleFonts.pacifico(
-            fontSize: 25,
+          "Cancer Types",
+          style: GoogleFonts.quintessential(
+            fontSize: 30,
             color: Colors.black,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
           ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black, //change your color here
         ),
         elevation: 0.0,
         backgroundColor: secondColor,
@@ -35,6 +40,7 @@ class CancerTypesPage extends StatelessWidget {
             height: double.infinity,
             color: mainColor,
             child: SingleChildScrollView(
+              physics:const BouncingScrollPhysics(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,25 +144,45 @@ class CancerTypesPage extends StatelessWidget {
   }
 
   Widget cancerItem(String name, Widget route, context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(100, 76, 61, 109),
-        borderRadius: BorderRadius.all(
-          Radius.circular(15.0),
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(100, 76, 61, 109),
+          borderRadius: BorderRadius.all(
+            Radius.circular(15.0),
+          ),
+          boxShadow:  [
+            BoxShadow(
+              color:Color.fromARGB(100, 76, 61, 109),
+              offset: Offset(
+                5.0,
+                5.0,
+              ),
+              blurRadius: 10.0,
+              spreadRadius: 2.0,
+            ),
+          ],
         ),
-      ),
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * .08,
-      child: InkWell(
-        onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => route));
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Text(
-            name,
-            style: const TextStyle(fontSize: 20),
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height * .08,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => route));
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Text(
+              name,
+                style: GoogleFonts.quintessential(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1,
+                ),
+            ),
           ),
         ),
       ),

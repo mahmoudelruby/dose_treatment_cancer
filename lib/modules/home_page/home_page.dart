@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:dose_treatment_cancer/modules/types_page/cancer_types.dart';
 import 'package:dose_treatment_cancer/shared/components/custom_text_form_field.dart';
 import 'package:dose_treatment_cancer/shared/components/show_alert_dialogue.dart';
@@ -17,10 +16,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text("WELCOME",
-            style: GoogleFonts.pacifico(fontSize: 25, color: Colors.black)),
+        title: Text(
+          "WELCOME",
+          style: GoogleFonts.quintessential(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
+          ),
+        ),
         elevation: 0.0,
-        backgroundColor: secondColor,
+        backgroundColor: Colors.transparent,
         centerTitle: true,
       ),
       body: Container(
@@ -32,13 +38,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             SafeArea(
               child: Container(
+                height: 20.0,
                 width: double.infinity,
                 color: mainColor,
               ),
             ),
-             Text(
+            Text(
               'Body Surface Area \nMeasurement',
-              style: GoogleFonts.quintessential(color: Colors.black,fontSize: 35,fontWeight: FontWeight.w700),
+              style: GoogleFonts.quintessential(
+                  color: Colors.black,
+                  fontSize: 35,
+                  fontWeight: FontWeight.w700),
             ),
             Container(
               height: 80.0,
@@ -46,7 +56,10 @@ class HomeScreen extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 16,
+                  ),
                   child: CustomTextFormField(
                     controller: heightController,
                     tegText: 'Height',
@@ -56,7 +69,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 16,
+                  ),
                   child: CustomTextFormField(
                     controller: weightController,
                     tegText: 'Weight',
@@ -89,26 +105,39 @@ class HomeScreen extends StatelessWidget {
                         width: 90.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: secondColor ,
+                          color: secondColor,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(30.0),
                           ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
                         ),
                         child: Center(
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Text(
                                 'Ok',
-                                style: TextStyle(
+                                style: GoogleFonts.quintessential(
                                   color: Colors.black,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.arrow_forward_sharp,
                                 color: Colors.black,
                               ),
@@ -140,12 +169,12 @@ class HomeScreen extends StatelessWidget {
       showAlertDialog(
         context,
         title: 'Body Area',
-        content:
-            'your body area is equal to  $area ',
+        content: 'your body area is equal to  $area ',
         defaultActionText: "Continue",
         defaultAction: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const CancerTypesPage()));
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const CancerTypesPage()),
+          );
         },
         cancelActionText: 'Change Values',
       );
