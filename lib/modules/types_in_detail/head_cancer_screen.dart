@@ -13,10 +13,15 @@ class HeadCancer extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: GoogleFonts.pacifico(
-            fontSize: 25,
+          style: GoogleFonts.quintessential(
+            fontSize: 30,
             color: Colors.black,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
           ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black, //change your color here
         ),
         elevation: 0.0,
         backgroundColor: secondColor,
