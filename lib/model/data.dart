@@ -319,9 +319,18 @@ DataModel uterineSarcomaModel = DataModel(
         RegimenModel(
           regimenName:
               "Docetaxel + Gemcitabine ^ 2,3",
-          regimenDetails: "Days 1 - 8: Gemcitabine ${900/area} mg IV at a rate of ${10/area} mg/minute, followed by: \nDay 8: Docetaxel 75-100mg/m^2 IV over 60minutes.Repeat cycle every 3weeks for 4-6 cycles.ORDays 1,8: Gemcitabine675mg/m^2 (if prior pelvicradiation) IV at a rate of10mg/m^2/minute, followed by: Day 8: Docetaxel 75mg/m^2IV over 60 minutes.Repeat cycle every 3 weeks for 4-6 cycles.",
+          regimenDetails: "Days 1 - 8: Gemcitabine ${900/area} mg IV at a rate of ${10/area} mg/minute, followed by: \nDay 8: Docetaxel ${75/area}-${100/area} mg IV over 60 minutes. \nRepeat cycle every 3 weeks for 4-6 cycles. \nOR \nDays 1 , 8: Gemcitabine ${675/area} mg (if prior pelvic radiation) IV at a rate of ${10/area} mg/minute, followed by: \nDay 8: Docetaxel ${75/area} mg IV over 60 minutes. \nRepeat cycle every 3 weeks for 4-6 cycles.",
         ),
         RegimenModel(regimenName: "Doxorubicin ^ 4", regimenDetails: "Day 1: Doxorubicin ${60/area}-${75/area} mg IV push. \nRepeat cycle every 3 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Dacarbazine ^ 5,6", regimenDetails: "Days 1-5: Dacarbazine ${250/area} mg IV over 30 minutes.\n Repeat cycle every 3 weeks for 4-6 cycles.\nOR\nDays 1-5: Dacarbazine ${187/area} mg (if prior pelvic radiation) IV over 30  minutes. \nRepeat cycle every 3 weeks for 4-6 cycles.\nOR\nDay 1: Dacarbazine ${1000/area} mg IV over 60 minutes.\nRepeat cycle every 3 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Doxorubicin + Decarbazine ^ 7,8", regimenDetails: "Days 1-4: Doxorubicin ${15/area} mg IV continuous infusion over 24 hours daily. \nDays 1 - 4: Dacarbazine ${187.5/area}-${250/area} mg IV continuous infusion over 24 hours daily. \nRepeat cycle every 3 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Doxorubicin + Ifosfamide ^ 9,10,b", regimenDetails: "Days 1- 3: Doxorubicin ${25/area} mg IV push. \nDays 1 - 3: Ifosfamide ${3000/area} mg IV continuous infusion over 24 hours daily. \nDays 1 - 3: Mesna ${3000/area} mg IV continuous infusion over 24 hours concurrently with Ifosfamide (additional Mesna may be administered following the completion of Ifosfamide per institutional standard). \nRepeat cycle every 3weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Epirubicin ^ 11", regimenDetails: "Day 1: Epirubicin ${75/area} mg IV push. \nRepeat cycle every 3 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Gemcitabine ^ 12", regimenDetails: "Days 1, 8, 15: Gemcitabine ${1800/area} mg IV over 30 minutes. \nRepeat cycle every 4 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Gemcitabine + Dacarbazine ^ 13", regimenDetails: "Day 1: Gemcitabine ${1800/area} mg IV at a rate of ${10/area} mg/minute. \nDay 1: Dacarbazine ${500/area} mg IV over 60 minutes. \nRepeat cycle every 2 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Gemcitabine + Vinorelbine ^ 14", regimenDetails: "Days 1, 8: Vinorelbine ${25/area} mg IV over 5-10 minutes. \nDays 1, 8: Gemcitabine ${800/area} mg IV at a rate of ${10/area} mg/minute. \nRepeat cycle every 3 weeks for 4-6 cycles.",),
+        RegimenModel(regimenName: "Ifosfamide ^ 15,16,b", regimenDetails: "Days 1-5: Ifosfamide ${1500/area} mg IV over 3 hours. \nDays 1-5: Mesna ${300/area} mg IV over 15 minutes before Ifosfamide, then at 4 and 8 hours from the start of each Ifosfamide dose. \nRepeat cycle every 3 weeks for 4-6 cycles. \nOR \nDays 1-3: Ifosfamide ${3000/area} mg IV continuous infusion over 24 hours daily. \nDays 1-3: Mesna ${3000/area} mg IV continuous infusion over 24 hours concurrently with Ifosfamide (addition Mesna may be administered following the completion of Ifosfamide per institutional standard). \nRepeat cycle every 3weeks for 4-6 cycles.",),
+
       ],
     ),
   ],
