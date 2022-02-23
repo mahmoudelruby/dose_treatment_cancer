@@ -69,7 +69,7 @@ class CancerTypesPage extends StatelessWidget {
                   ),
                   cancerItem(
                       "1- Head Cancer",
-                      const HeadCancer(
+                       HeadCancer(
                         title: "Head Cancer",
                       ),
                       context),
