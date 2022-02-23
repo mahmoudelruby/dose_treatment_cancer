@@ -1,3 +1,4 @@
+import 'package:dose_treatment_cancer/model/data.dart';
 import 'package:dose_treatment_cancer/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +10,7 @@ class HeadCancer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: mainColor,
+      backgroundColor: mainColor,
       appBar: AppBar(
         title: Text(
           title,
@@ -30,67 +31,12 @@ class HeadCancer extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ExpansionTile(
-              title: Text(
-                "LEVEL A",
-              ),
-              children: [
-                ListTile(
-                  title: Text("One"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("two"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("three"),
-                  onTap: () {},
-                ),
-              ],
-            ),
-            ExpansionTile(
-              title: Text(
-                "LEVEL B",
-              ),
-              children: [
-                ListTile(
-                  title: Text("One"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("two"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("three"),
-                  onTap: () {},
-                ),
-              ],
-            ),
-            ExpansionTile(
-              title: Text(
-                "LEVEL C",
-              ),
-              children: [
-                ListTile(
-                  title: Text("One"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("two"),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Text("three"),
-                  onTap: () {},
-                ),
-              ],
-            ),
-          ],
+          children: createPageExpansionTiles(context, headCancerModel),
         ),
       ),
     );
   }
+
+
+
 }
