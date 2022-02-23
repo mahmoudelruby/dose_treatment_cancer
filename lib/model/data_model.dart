@@ -6,8 +6,8 @@ class DataModel {
 }
 
 class DetailsModel {
-  DetailsModel({required this.treatmentName, required this.regimens});
-  final String treatmentName;
+  DetailsModel({required this.protocolName, required this.regimens});
+  final String protocolName;
   List<RegimenModel> regimens;
 }
 
