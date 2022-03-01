@@ -16,7 +16,7 @@ class CancerTypesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondColor,
+      backgroundColor: mainColor,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
@@ -32,13 +32,13 @@ class CancerTypesPage extends StatelessWidget {
           color: Colors.black, //change your color here
         ),
         elevation: 0.0,
-        backgroundColor: secondColor,
+        backgroundColor: mainColor,
         centerTitle: true,
       ),
       body: SafeArea(
         child: Container(
             height: double.infinity,
-            color: mainColor,
+            color: backGroundColor,
             child: SingleChildScrollView(
               physics:const BouncingScrollPhysics(),
               child: Column(
@@ -55,7 +55,7 @@ class CancerTypesPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          'Kindly, please choose \ncancer type ☺️ ',
+                          'Kindly, please choose \ncancer type ️ ',
                           style: GoogleFonts.quintessential(
                               color: Colors.black,
                               fontSize: 35,

@@ -9,7 +9,7 @@ DataModel headCancerModel = DataModel(
       regimens: <RegimenModel>[
         RegimenModel(
           regimenName: "High dose Cisplatin",
-          regimenDetails: "Days 1, 22, and 43: Cisplatin ${100 / area} mg IV",
+          regimenDetails: "Days 1, 22, and 43: Cisplatin ${(100 / area).toStringAsPrecision(3)} mg IV",
         ),
         RegimenModel(
           regimenName: "cetuxiamb",

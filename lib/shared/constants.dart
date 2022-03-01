@@ -3,9 +3,11 @@ import 'package:dose_treatment_cancer/modules/dose_page/dose_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color mainColor = const Color(0xFFC9FAFC);
+Color backGroundColor = const Color(0xFFFFF8EC);
 
-Color secondColor = const Color(0xCC008081);
+Color mainColor = const Color(0xFFA181B9);
+
+Color secondColor = const Color(0xFF583D85);
 
 void navigateTo(context, Widget route) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
@@ -18,22 +20,24 @@ List<Widget> createTiles(DetailsModel model, context) {
   for (var element in model.regimens) {
     tiles.add(
       ListTile(
-        title: Text(
-          element.regimenName,
-          style: GoogleFonts.quintessential(
-            fontSize: 12.0,
-            color: Color(0xff040541),
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
+          title: Text(
+            element.regimenName,
+            style: GoogleFonts.quintessential(
+              fontSize: 16,
+              color: Color(0xff040541),
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+            ),
           ),
-        ),
-        onTap: () => navigateTo(
-            context,
-            DosePage(
-              regimenName: element.regimenName,
-              prescription: element.regimenDetails,
-            )),
-      ),
+          onTap: () {
+            print("after $area");
+            navigateTo(
+                context,
+                DosePage(
+                  regimenName: element.regimenName,
+                  prescription: element.regimenDetails,
+                ));
+          }),
     );
   }
   return tiles;
@@ -46,7 +50,7 @@ List<Widget> createPageExpansionTiles(context, DataModel dataModel) {
         title: Text(
           element.protocolName,
           style: GoogleFonts.quintessential(
-            fontSize: 16.0,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
             letterSpacing: 2,
           ),
