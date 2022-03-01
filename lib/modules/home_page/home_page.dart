@@ -14,44 +14,55 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: secondColor,
         title: Text(
-          "WELCOME",
-          style: GoogleFonts.quintessential(
-            fontSize: 25,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
-          ),
+          'Home Page',
+          style: TextStyle(color: secondColor),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
+        elevation: 0,
       ),
       body: Container(
-        color: mainColor,
+        color: backGroundColor,
         width: double.infinity,
         height: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SafeArea(
-              child: Container(
-                height: 20.0,
-                width: double.infinity,
-                color: mainColor,
-              ),
-            ),
-            Text(
-              'Body Surface Area \nMeasurement',
-              style: GoogleFonts.quintessential(
-                  color: Colors.black,
-                  fontSize: 35,
-                  fontWeight: FontWeight.w700),
+            Stack(
+              children: [
+                Opacity(
+                  opacity: .5,
+                  child: ClipPath(
+                    clipper: WaveClipper(),
+                    child: Container(
+                      color: mainColor,
+                      height: 230,
+                    ),
+                  ),
+                ),
+                Opacity(
+                  opacity: 1,
+                  child: ClipPath(
+                    clipper: WaveClipper(),
+                    child: Container(
+                      width: double.infinity,
+                      child: const Padding(
+                        padding: EdgeInsets.only(top: 35, left: 70),
+                        child: Text(
+                          "Body Surface Area \nMeasurement",
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                        ),
+                      ),
+                      color: secondColor,
+                      height: 210,
+                    ),
+                  ),
+                ),
+              ],
             ),
             Container(
-              height: 80.0,
+              height: 40,
             ),
             Column(
               children: [
@@ -92,6 +103,7 @@ class HomeScreen extends StatelessWidget {
                         try {
                           calculateArea(double.parse(heightController.text),
                               double.parse(weightController.text), context);
+                          print("before $area");
                         } catch (error) {
                           showAlertDialog(context,
                               title: 'Input Error',
@@ -105,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                         width: 90.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: secondColor,
+                          color: mainColor,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(30.0),
                           ),
@@ -165,7 +177,8 @@ class HomeScreen extends StatelessWidget {
         Navigator.of(context).pop(false);
       });
     } else {
-      area = (sqrt((height * weight) / 3600)).roundToDouble();
+      var areaBeforeRound = (sqrt((height * weight) / 3600));
+      area = double.parse((areaBeforeRound).toStringAsFixed(2));
       showAlertDialog(
         context,
         title: 'Body Area',
@@ -179,5 +192,31 @@ class HomeScreen extends StatelessWidget {
         cancelActionText: 'Change Values',
       );
     }
+  }
+}
+
+class WaveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = new Path();
+    path.lineTo(0, size.height);
+    var firstStart = Offset(size.width / 5, size.height);
+    var firstEnd = Offset(size.width / 2.25, size.height - 50.0);
+    path.quadraticBezierTo(
+        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy);
+    var secondStart =
+        Offset(size.width - (size.width / 3.24), size.height - 105);
+    var secondend = Offset(size.width, size.height - 10);
+    path.quadraticBezierTo(
+        secondStart.dx, secondStart.dy, secondend.dx, secondend.dy);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    throw UnimplementedError();
   }
 }

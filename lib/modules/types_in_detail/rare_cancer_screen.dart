@@ -9,7 +9,7 @@ class RareCancerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainColor,
+      backgroundColor: backGroundColor,
       appBar: AppBar(
         title: Text(
           title,
@@ -19,7 +19,7 @@ class RareCancerScreen extends StatelessWidget {
           ),
         ),
         elevation: 0.0,
-        backgroundColor: secondColor,
+        backgroundColor: mainColor,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
