@@ -3,7 +3,7 @@ import 'package:dose_treatment_cancer/modules/dose_page/dose_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color backGroundColor = const Color(0xFFFFF8EC);
+Color backgroundColor = const Color(0xFFFFF8EC);
 
 Color mainColor = const Color(0xFFA181B9);
 
@@ -24,13 +24,12 @@ List<Widget> createTiles(DetailsModel model, context) {
             element.regimenName,
             style: GoogleFonts.quintessential(
               fontSize: 16,
-              color: Color(0xff040541),
+              color: const Color(0xff040541),
               fontWeight: FontWeight.bold,
               letterSpacing: 2,
             ),
           ),
           onTap: () {
-            print("after $area");
             navigateTo(
                 context,
                 DosePage(

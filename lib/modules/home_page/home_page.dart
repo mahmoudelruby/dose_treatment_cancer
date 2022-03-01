@@ -6,8 +6,8 @@ import 'package:dose_treatment_cancer/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
   final TextEditingController heightController = TextEditingController();
   final TextEditingController weightController = TextEditingController();
 
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        color: backGroundColor,
+        color: backgroundColor,
         width: double.infinity,
         height: double.infinity,
         child: Column(
