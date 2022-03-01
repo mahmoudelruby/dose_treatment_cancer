@@ -23,13 +23,13 @@ class CancerTypesPage extends StatelessWidget {
           "Cancer Types",
           style: GoogleFonts.quintessential(
             fontSize: 30,
-            color: Colors.black,
+            color: backgroundColor,
             fontWeight: FontWeight.bold,
             letterSpacing: 2,
           ),
         ),
-        iconTheme: const IconThemeData(
-          color: Colors.black, //change your color here
+        iconTheme:  IconThemeData(
+          color: backgroundColor, //change your color here
         ),
         elevation: 0.0,
         backgroundColor: mainColor,
@@ -38,7 +38,7 @@ class CancerTypesPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
             height: double.infinity,
-            color: backGroundColor,
+            color: backgroundColor,
             child: SingleChildScrollView(
               physics:const BouncingScrollPhysics(),
               child: Column(
@@ -178,7 +178,7 @@ class CancerTypesPage extends StatelessWidget {
               name,
                 style: GoogleFonts.quintessential(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: backgroundColor,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
                 ),

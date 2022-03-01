@@ -1,8 +1,8 @@
 class DataModel {
-  DataModel({required this.cancerName, required this.details});
-
+  DataModel({required this.cancerName, required this.details , required this.area});
+final double area;
   final String cancerName;
-  List<DetailsModel> details;
+  final List<DetailsModel> details;
 }
 
 class DetailsModel {
