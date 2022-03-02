@@ -28,7 +28,7 @@ class _NeckCancerState extends State<NeckCancer> {
           RegimenModel(
             regimenName: "* Cisplatin + radiotherapy + cisplatin + 5FU",
             regimenDetails:
-            "Cycles 1 - 3 \nDay 1: Cisplatin ${(100/area).toStringAsPrecision(3)} mg IV; plus radiotherapy."
+            "*Cycles 1 - 3 \nDay 1: Cisplatin ${(100/area).toStringAsPrecision(3)} mg IV; plus radiotherapy."
                 "\nRepeat cycle every 3 weeks; followed by Cycles"
                 " 4-6\nDays 1: Cisplatin ${(80/area).toStringAsPrecision(3)} mg IV over 1 hour ,plus "
                 "\nDays 1-4 : 5-FU ${(1000/area).toStringAsPrecision(3)} mg continuous IV infusion daily. "

@@ -9,6 +9,10 @@ Color mainColor = const Color(0xFFA181B9);
 
 Color secondColor = const Color(0xFF583D85);
 
+Color babyBlue = const Color(0xFFBFD1DF);
+
+Color tileBackground = const Color.fromARGB(100, 76, 61, 109);
+
 void navigateTo(context, Widget route) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
     return route;

@@ -34,7 +34,7 @@ class _HeadCancerState extends State<HeadCancer> {
             regimenName: "* cetuxiamb",
             regimenDetails:
                 "Day 1: Cetuximab ${(400/area).toStringAsPrecision(3)} mg loading dose over 2 hours, 1 week before radiotherapy."
-                " \nDay 7: with radiotherapy cetuximab ${(250/area).toStringAsPrecision(3)} mg. \n7 week repeated.",
+                "\nDay 7: with radiotherapy cetuximab ${(250/area).toStringAsPrecision(3)} mg. \n7 week repeated.",
           ),
           RegimenModel(
             regimenName: "* Carboplatin + infusional 5-FU (Category 1)",
@@ -63,7 +63,7 @@ class _HeadCancerState extends State<HeadCancer> {
           RegimenModel(
             regimenName: "* Carboplatin + paclitaxel (Category 2B)",
             regimenDetails:
-                "Day 1: Paclitaxel ${(40/area).toStringAsPrecision(3)}-${(45/area).toStringAsPrecision(3)} mg/week and carboplatin ${100 / area} mg/week",
+                "Day 1: Paclitaxel ${(40/area).toStringAsPrecision(3)}-${(45/area).toStringAsPrecision(3)} mg/week and carboplatin ${(100 / area).toStringAsPrecision(3)} mg/week",
           ),
           RegimenModel(
             regimenName: "* Weekly cisplatin (Category 2B)",
@@ -105,6 +105,7 @@ class _HeadCancerState extends State<HeadCancer> {
     ],
   );
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,6 +128,7 @@ class _HeadCancerState extends State<HeadCancer> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        physics:const BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: createPageExpansionTiles(context, headCancerModel),

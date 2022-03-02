@@ -28,7 +28,7 @@ class CancerTypesPage extends StatelessWidget {
             letterSpacing: 2,
           ),
         ),
-        iconTheme:  IconThemeData(
+        iconTheme: IconThemeData(
           color: backgroundColor, //change your color here
         ),
         elevation: 0.0,
@@ -40,39 +40,36 @@ class CancerTypesPage extends StatelessWidget {
             height: double.infinity,
             color: backgroundColor,
             child: SingleChildScrollView(
-              physics:const BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
                     height: MediaQuery.of(context).size.height * .03,
                   ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'Kindly, please choose \ncancer type ️ ',
-                          style: GoogleFonts.quintessential(
-                              color: Colors.black,
-                              fontSize: 35,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8,),
+                    child: Text(
+                      'Kindly, please choose \ncancer type ️ ',
+                      style: GoogleFonts.quintessential(
+                          color: Colors.black,
+                          fontSize: 35,
+                          fontWeight: FontWeight.w700,),
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   cancerItem(
                       "1- Head Cancer",
-                       HeadCancer(
+                      const HeadCancer(
                         title: "Head Cancer",
                       ),
-                      context),
+                      babyBlue,
+                      Colors.black,
+                    context,),
                   const SizedBox(
                     height: 8.0,
                   ),
@@ -81,6 +78,8 @@ class CancerTypesPage extends StatelessWidget {
                     const NeckCancer(
                       title: 'Nasopharynx Cancer',
                     ),
+                    tileBackground,
+                    backgroundColor,
                     context,
                   ),
                   const SizedBox(
@@ -91,6 +90,8 @@ class CancerTypesPage extends StatelessWidget {
                     const SoftTissueScreen(
                       title: 'Soft Tissue Sarcoma',
                     ),
+                    babyBlue,
+                    Colors.black,
                     context,
                   ),
                   const SizedBox(
@@ -101,6 +102,8 @@ class CancerTypesPage extends StatelessWidget {
                     const UterineSarcomaScreen(
                       title: 'Uterine Sarcoma',
                     ),
+                    tileBackground,
+                    backgroundColor,
                     context,
                   ),
                   const SizedBox(
@@ -111,6 +114,8 @@ class CancerTypesPage extends StatelessWidget {
                     const MetastaticBreastCancerScreen(
                       title: 'MetastaticBreastCancerScreen',
                     ),
+                    babyBlue,
+                    Colors.black,
                     context,
                   ),
                   const SizedBox(
@@ -121,6 +126,8 @@ class CancerTypesPage extends StatelessWidget {
                     const InvasiveNonMetastaticBreastCancerScreen(
                       title: 'Invasive NonMetastatic Breast Cancer',
                     ),
+                    tileBackground,
+                    backgroundColor,
                     context,
                   ),
                   const SizedBox(
@@ -131,6 +138,8 @@ class CancerTypesPage extends StatelessWidget {
                     const RareCancerScreen(
                       title: 'Rare Cancer',
                     ),
+                    babyBlue,
+                    Colors.black,
                     context,
                   ),
                   const SizedBox(
@@ -143,19 +152,25 @@ class CancerTypesPage extends StatelessWidget {
     );
   }
 
-  Widget cancerItem(String name, Widget route, context) {
+  Widget cancerItem(
+    String name,
+    Widget route,
+    Color background,
+    Color textColor,
+    context,
 
+  ) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(100, 76, 61, 109),
-          borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
+        decoration:  BoxDecoration(
+          color:background,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(45.0),
           ),
-          boxShadow:  [
+          boxShadow: const [
             BoxShadow(
-              color:Color.fromARGB(100, 76, 61, 109),
+              color: Color.fromARGB(100, 76, 61, 109),
               offset: Offset(
                 5.0,
                 5.0,
@@ -172,16 +187,17 @@ class CancerTypesPage extends StatelessWidget {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => route));
           },
+
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding:  const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0,),
             child: Text(
               name,
-                style: GoogleFonts.quintessential(
-                  fontSize: 20,
-                  color: backgroundColor,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
+              style: GoogleFonts.quintessential(
+                fontSize: 20,
+                color: textColor,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+              ),
             ),
           ),
         ),
