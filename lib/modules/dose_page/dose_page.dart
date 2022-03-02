@@ -78,9 +78,7 @@ class DosePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .60,
-                  ),
+                  Spacer(),
                   InkWell(
                     onTap: () => Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(

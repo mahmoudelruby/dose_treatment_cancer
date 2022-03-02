@@ -38,57 +38,57 @@ class _RareCancerScreenState extends State<RareCancerScreen> {
           children: [
             ExpansionTile(
               title: Text(
-                "LEVEL A",
+                "Protocol Name",
               ),
               children: [
                 ListTile(
-                  title: Text("One"),
+                  title: Text("regimenName 1"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("two"),
+                  title: Text("regimenName 2"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("three"),
+                  title: Text("regimenName 3"),
                   onTap: () {},
                 ),
               ],
             ),
             ExpansionTile(
               title: Text(
-                "LEVEL B",
+                "Protocol Name",
               ),
               children: [
                 ListTile(
-                  title: Text("One"),
+                  title: Text("regimenName 1"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("two"),
+                  title: Text("regimenName 2"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("three"),
+                  title: Text("regimenName 3"),
                   onTap: () {},
                 ),
               ],
             ),
             ExpansionTile(
               title: Text(
-                "LEVEL C",
+                "Protocol Name",
               ),
               children: [
                 ListTile(
-                  title: Text("One"),
+                  title: Text("regimenName 1"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("two"),
+                  title: Text("regimenName 2"),
                   onTap: () {},
                 ),
                 ListTile(
-                  title: Text("three"),
+                  title: Text("regimenName 3"),
                   onTap: () {},
                 ),
               ],
