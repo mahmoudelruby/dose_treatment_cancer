@@ -22,18 +22,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+
         child: Column(
           children: [
             Container(
               color: secondColor,
-              height: 20.0,
+              height: 40,
               width: double.infinity,
             ),
             const Image(
               image: AssetImage("assets/images/home.jpg"),
             ),
+            SizedBox(
+              height: 40,),
             Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 8,
@@ -61,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 30,
             ),
             Row(
               children: [
@@ -124,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+
                 ),
               ],
             ),
@@ -144,9 +148,9 @@ class _HomeScreenState extends State<HomeScreen> {
           });
     } else {
       var areaBeforeRound = (sqrt((height * weight) / 3600));
-      area = areaBeforeRound;
+      
       setState(() {
-        area = areaBeforeRound;
+        area = double.parse((areaBeforeRound).toStringAsFixed(2));
       });
       showAlertDialog(
         context,

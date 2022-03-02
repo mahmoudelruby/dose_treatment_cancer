@@ -23,7 +23,7 @@ List<Widget> createTiles(DetailsModel model, context) {
           title: Text(
             element.regimenName,
             style: GoogleFonts.quintessential(
-              fontSize: 16,
+              fontSize: 20,
               color: const Color(0xff040541),
               fontWeight: FontWeight.bold,
               letterSpacing: 2,
@@ -49,7 +49,7 @@ List<Widget> createPageExpansionTiles(context, DataModel dataModel) {
         title: Text(
           element.protocolName,
           style: GoogleFonts.quintessential(
-            fontSize: 20,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
             letterSpacing: 2,
           ),

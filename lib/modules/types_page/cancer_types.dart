@@ -166,7 +166,7 @@ class CancerTypesPage extends StatelessWidget {
           ],
         ),
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * .08,
+        height: 65,
         child: InkWell(
           onTap: () {
             Navigator.of(context)
