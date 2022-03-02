@@ -16,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController heightController = TextEditingController();
-
   final TextEditingController weightController = TextEditingController();
 
   @override
@@ -139,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void calculateArea(double height, double weight, context) {
 
-    if (height > 250 || height < 100 || weight > 250) {
+    if (height > 251 || height < 80 || weight > 600) {
       showAlertDialog(context,
           title: 'Input  Error',
           content: 'Irrational inputs',
@@ -147,6 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.of(context).pop(false);
           });
     } else {
+
       var areaBeforeRound = (sqrt((height * weight) / 3600));
       
       setState(() {
@@ -155,12 +155,10 @@ class _HomeScreenState extends State<HomeScreen> {
       showAlertDialog(
         context,
         title: 'Body Area',
-        content: 'your body area is equal to  $area ',
+        content: 'Your body area is equal to $area',
         defaultActionText: "Continue",
         defaultAction: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) =>  const CancerTypesPage()),
-          );
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const CancerTypesPage()),);
         },
         cancelActionText: 'Change Values',
       );

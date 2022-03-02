@@ -34,6 +34,7 @@ class DosePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,7 +54,7 @@ class DosePage extends StatelessWidget {
                 height: 48.0,
               ),
               Text(
-                "Details",
+                "Details:",
                 style: GoogleFonts.quintessential(
                   fontSize: 30,
                   color: secondColor,
@@ -78,13 +79,14 @@ class DosePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () => Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
-                        ),
-                        (route) => false),
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen(),
+                      ),
+                      (route) => false,
+                    ),
                     child: Container(
                       width: 120,
                       height: 50.0,
