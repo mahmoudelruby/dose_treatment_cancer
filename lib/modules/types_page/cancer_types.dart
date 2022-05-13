@@ -158,7 +158,6 @@ class CancerTypesPage extends StatelessWidget {
     Color background,
     Color textColor,
     context,
-
   ) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -184,6 +183,9 @@ class CancerTypesPage extends StatelessWidget {
         height: 65,
         child: InkWell(
           onTap: () {
+            xclCancerType = name ;
+
+
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => route));
           },
