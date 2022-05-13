@@ -8,34 +8,163 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int gradeTileNumber = 1;
+
+  bool isFemale = true;
+
   final TextEditingController heightController = TextEditingController();
   final TextEditingController weightController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
-
         child: Column(
           children: [
             Container(
               color: secondColor,
-              height: 40,
+              height: 20,
               width: double.infinity,
             ),
             const Image(
               image: AssetImage("assets/images/home.jpg"),
             ),
-            SizedBox(
-              height: 40,),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 4,
+                horizontal: 16,
+              ),
+              child: CustomTextFormField(
+                controller: nameController,
+                tegText: 'Name',
+                hintText: 'Please Enter your name',
+                isPassword: false,
+                inputType: TextInputType.text,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 4,
+                horizontal: 16,
+              ),
+              child: CustomTextFormField(
+                controller: ageController,
+                tegText: 'Age',
+                hintText: 'Please Enter your age',
+                isPassword: false,
+                inputType: TextInputType.number,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: Text(
+                    'Gender',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 9.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGender = "Male";
+                          isFemale = false;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: isFemale ? Colors.grey : secondColor,
+                        ),
+                        width: 80,
+                        height: 80,
+                        child: Center(
+                          child: Icon(
+                            Icons.male,
+                            color: backgroundColor,
+                            size: 70.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGender = "Female";
+                          isFemale = true ;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: isFemale ? secondColor : Colors.grey,
+                        ),
+                        width: 80,
+                        height: 80,
+                        child: Center(
+                          child: Icon(
+                            Icons.female,
+                            color: backgroundColor,
+                            size: 70.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 8,
@@ -62,8 +191,192 @@ class _HomeScreenState extends State<HomeScreen> {
                 inputType: TextInputType.number,
               ),
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: Text(
+                    'Cancer Grade',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 9.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGrade = 1;
+                          gradeTileNumber = 1;
+
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: gradeTileNumber == 1
+                              ? secondColor
+                              : Colors.grey,
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            "1",
+                            style: TextStyle(
+                              color: backgroundColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGrade = 2;
+                          gradeTileNumber = 2;
+
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: gradeTileNumber == 2
+                              ? secondColor
+                              : Colors.grey,
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            "2",
+                            style: TextStyle(
+                              color: backgroundColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGrade = 3;
+                          gradeTileNumber = 3;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: gradeTileNumber == 3
+                              ? secondColor
+                              : Colors.grey,
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            "3",
+                            style: TextStyle(
+                              color: backgroundColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          xclGrade = 4;
+                          gradeTileNumber = 4;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black54,
+                              offset: Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: gradeTileNumber == 4
+                              ? secondColor
+                              : Colors.grey,
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            "4",
+                            style: TextStyle(
+                              color: backgroundColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
             const SizedBox(
-              height: 30,
+              height: 30.0,
             ),
             Row(
               children: [
@@ -73,13 +386,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     try {
                       calculateArea(double.parse(heightController.text),
                           double.parse(weightController.text), context);
+                      xclAge = int.parse(ageController.text);
+                      xclName = nameController.text;
+                      xclHeight =double.parse(heightController.text);
+                      xclWeight =double.parse(weightController.text);
+
                     } catch (error) {
                       showAlertDialog(context,
                           title: 'Input Error',
                           content: error.toString(),
                           defaultActionText: "OK", defaultAction: () {
-                            Navigator.of(context).pop(false);
-                          });
+                        Navigator.of(context).pop(false);
+                      });
                     }
                   },
                   child: Container(
@@ -118,7 +436,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           const SizedBox(
                             width: 10.0,
                           ),
-                           Icon(
+                          Icon(
                             Icons.arrow_forward_sharp,
                             color: backgroundColor,
                           ),
@@ -126,9 +444,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 10.0,
             ),
           ],
         ),
@@ -136,21 +456,20 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void calculateArea(double height, double weight, context) {
-
+  void calculateArea(double height, double weight,context) {
     if (height > 251 || height < 80 || weight > 600) {
       showAlertDialog(context,
           title: 'Input  Error',
           content: 'Irrational inputs',
           defaultActionText: 'Ok', defaultAction: () {
-            Navigator.of(context).pop(false);
-          });
+        Navigator.of(context).pop(false);
+      });
     } else {
-
       var areaBeforeRound = (sqrt((height * weight) / 3600));
-      
+
       setState(() {
         area = double.parse((areaBeforeRound).toStringAsFixed(2));
+        xclArea = area ;
       });
       showAlertDialog(
         context,
@@ -158,7 +477,9 @@ class _HomeScreenState extends State<HomeScreen> {
         content: 'Your body area is equal to $area',
         defaultActionText: "Continue",
         defaultAction: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  const CancerTypesPage()),);
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const CancerTypesPage()),
+          );
         },
         cancelActionText: 'Change Values',
       );

@@ -34,6 +34,9 @@ List<Widget> createTiles(DetailsModel model, context) {
             ),
           ),
           onTap: () {
+            xclProtocolName = model.protocolName ;
+            xclRegimenName = element.regimenName ;
+            xclRegimenDetails = element.regimenDetails ;
             navigateTo(
                 context,
                 DosePage(
@@ -63,5 +66,44 @@ List<Widget> createPageExpansionTiles(context, DataModel dataModel) {
   return expansionTiles;
 }
 
+showSnackBar(BuildContext context, String text) {
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      backgroundColor: backgroundColor,
+      content: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 5.0,
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      elevation: 10.0,
+    ),
+  );
+}
+
 double area = 0;
 double weight = 0;
+
+String xclName = "";
+
+int xclAge = 0;
+
+String xclGender = "Female";
+double xclHeight = 0;
+
+double xclWeight = 0;
+
+double xclArea = 0;
+
+double xclGrade = 1;
+
+String xclCancerType = "";
+String xclProtocolName = "";
+String xclRegimenName = "";
+String xclRegimenDetails = "";

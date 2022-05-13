@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 70.0,
+      height: 65.0,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
