@@ -112,7 +112,7 @@ class DosePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  const Spacer(),
+
                   InkWell(
                     onTap: () {
                       submitForm(context);
@@ -162,20 +162,13 @@ class DosePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                children: [
-                  const Spacer(),
+                  Spacer(),
                   InkWell(
                     onTap: () => Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
                         builder: (context) => HomeScreen(),
                       ),
-                      (route) => false,
+                          (route) => false,
                     ),
                     child: Container(
                       width: 120,
@@ -225,8 +218,9 @@ class DosePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 8.0,
-              )
+                height: 20.0,
+              ),
+
             ],
           ),
         ),
